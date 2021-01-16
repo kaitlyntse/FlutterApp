@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
+import 'package:confetti/confetti.dart';
 
 void main() => runApp(new MyApp());
 
