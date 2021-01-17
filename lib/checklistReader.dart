@@ -8,26 +8,23 @@ class DynamicallyCheckbox extends StatefulWidget {
 
 class DynamicallyCheckboxState extends State {
   Map<String, bool> List = tasks;
+  var allCheck = true;
 
-  var holder_1 = [];
-
-  getItems() {
+  checkAllTrue() {
     List.forEach((key, value) {
-      if (value == true) {
-        holder_1.add(key);
+      if (value == false) {
+        allCheck = false;
       }
     });
-
-    // Printing all selected items on Terminal screen.
-    print(holder_1);
-    // Here you will get all your selected Checkbox items.
-
-    // Clear array after use.
-    holder_1.clear();
   }
 
   @override
   Widget build(BuildContext context) {
+    if (DateTime.now().hour >= 24 && DateTime.now().hour <= 6) {
+      List.forEach((key, value) {
+        List[key] = false;
+      });
+    }
     return Column(children: <Widget>[
       /*RaisedButton(
         child: Text(" Get Checked Checkbox Values "),

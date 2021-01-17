@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
 import 'dart:async';
-import 'package:confetti/confetti.dart';
 
 void main() => runApp(new MyApp());
 
