@@ -84,8 +84,14 @@ class _DashboardState extends State<Dashboard> {
           VerticalDivider(thickness: 1, width: 1),
           // This is the main content.
           Expanded(
+              child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomLeft,
+                    colors: [Colors.blue, Colors.red])),
             child: Center(child: getPage(_selectedIndex)),
-          ),
+          )),
           /*Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(

@@ -38,27 +38,20 @@ class DynamicallyCheckboxState extends State {
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       ),*/
       Expanded(
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomLeft,
-                  colors: [Colors.blue, Colors.red])),
-          child: ListView(
-            children: List.keys.map((String key) {
-              return new CheckboxListTile(
-                title: new Text(key, style: TextStyle(color: Colors.white)),
-                value: List[key],
-                activeColor: Colors.deepPurple[400],
-                checkColor: Colors.white,
-                onChanged: (bool value) {
-                  setState(() {
-                    List[key] = value;
-                  });
-                },
-              );
-            }).toList(),
-          ),
+        child: ListView(
+          children: List.keys.map((String key) {
+            return new CheckboxListTile(
+              title: new Text(key, style: TextStyle(color: Colors.white)),
+              value: List[key],
+              activeColor: Colors.deepPurple[400],
+              checkColor: Colors.white,
+              onChanged: (bool value) {
+                setState(() {
+                  List[key] = value;
+                });
+              },
+            );
+          }).toList(),
         ),
       ),
     ]);
