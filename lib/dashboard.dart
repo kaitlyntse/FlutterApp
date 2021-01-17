@@ -46,13 +46,36 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+    var bgColor1;
+    var bgColor2;
+    if (DateTime.now().hour >= 8 && DateTime.now().hour <= 12) {
+      bgColor1 = Colors.lightBlue;
+      bgColor2 = Colors.yellow;
+    } else if (DateTime.now().hour >= 13 && DateTime.now().hour <= 17) {
+      bgColor1 = Colors.yellow;
+      bgColor2 = Colors.red;
+    } else if (DateTime.now().hour >= 18 && DateTime.now().hour <= 24) {
+      bgColor1 = Colors.red;
+      bgColor2 = Colors.indigo;
+    } else {
+      bgColor1 = Colors.indigo;
+      bgColor2 = Colors.lightBlue;
+    }
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
 
     return new Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample Code'),
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Text(widget.title),
+      //   flexibleSpace: Container(
+      //     decoration: BoxDecoration(
+      //         gradient: LinearGradient(
+      //             begin: Alignment.topLeft,
+      //             end: Alignment.bottomRight,
+      //             colors: <Color>[Colors.blue, Colors.red])),
+      //   ),
+      // ),
       body: Row(
         children: <Widget>[
           // NavigationRail(
@@ -91,7 +114,7 @@ class _DashboardState extends State<Dashboard> {
                 gradient: LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomLeft,
-                    colors: [Colors.blue, Colors.red])),
+                    colors: [bgColor1, bgColor2])),
             child: Center(child: getPage(_selectedIndex)),
           )),
           /*Container(
