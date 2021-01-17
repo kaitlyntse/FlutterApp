@@ -55,22 +55,6 @@ class _DashboardState extends State<Dashboard> {
       ),
       body: Row(
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [Colors.blue, Colors.red])),
-            child: Center(
-              child: Text(
-                'Hello Gradient!',
-                style: TextStyle(
-                    fontSize: 48.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
-              ),
-            ),
-          ),
           NavigationRail(
             selectedIndex: _selectedIndex,
             onDestinationSelected: (int index) {
@@ -83,7 +67,7 @@ class _DashboardState extends State<Dashboard> {
               NavigationRailDestination(
                 icon: Icon(Icons.favorite_border),
                 selectedIcon: Icon(Icons.favorite),
-                label: Text('First'),
+                label: Text('Home'),
               ),
               NavigationRailDestination(
                 icon: Icon(Icons.bookmark_border),
@@ -101,7 +85,23 @@ class _DashboardState extends State<Dashboard> {
           // This is the main content.
           Expanded(
             child: Center(child: getPage(_selectedIndex)),
-          )
+          ),
+          /*Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomLeft,
+                    colors: [Colors.blue, Colors.red])),
+            child: Center(
+              child: Text(
+                'Hello Gradient!',
+                style: TextStyle(
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ),*/
         ],
       ),
     );

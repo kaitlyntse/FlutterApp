@@ -29,29 +29,36 @@ class DynamicallyCheckboxState extends State {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      RaisedButton(
+      /*RaisedButton(
         child: Text(" Get Checked Checkbox Values "),
         onPressed: getItems,
         color: Colors.pink,
         textColor: Colors.white,
         splashColor: Colors.grey,
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-      ),
+      ),*/
       Expanded(
-        child: ListView(
-          children: List.keys.map((String key) {
-            return new CheckboxListTile(
-              title: new Text(key),
-              value: List[key],
-              activeColor: Colors.deepPurple[400],
-              checkColor: Colors.white,
-              onChanged: (bool value) {
-                setState(() {
-                  List[key] = value;
-                });
-              },
-            );
-          }).toList(),
+        child: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomLeft,
+                  colors: [Colors.blue, Colors.red])),
+          child: ListView(
+            children: List.keys.map((String key) {
+              return new CheckboxListTile(
+                title: new Text(key, style: TextStyle(color: Colors.white)),
+                value: List[key],
+                activeColor: Colors.deepPurple[400],
+                checkColor: Colors.white,
+                onChanged: (bool value) {
+                  setState(() {
+                    List[key] = value;
+                  });
+                },
+              );
+            }).toList(),
+          ),
         ),
       ),
     ]);
